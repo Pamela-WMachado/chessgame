@@ -25,7 +25,6 @@ public class Board {
         this.columns += columns;
     }
 
-
     public Piece piece(Integer row, Integer column) {
         return pieces[row][column];
     }
@@ -33,4 +32,11 @@ public class Board {
         return pieces[position.getRow()][position.getColumn()];
     }
 
+    //novo método que insere uma peça em uma posição
+    //pega a matriz de peças do tabuleiro que já foi instanciada no construtor
+    // e atribui a sua position a piece recebida como argumento
+    public void placePiece(Piece piece, Position position) {
+        pieces[position.getRow()][position.getColumn()] = piece;
+        piece.position = position;
+    }
 }
